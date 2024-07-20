@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submitted Data</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    .table-container {
+      background-color: rgba(61, 162, 137, 0.71);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 80%;
+    }
+    .table-container h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    hr {
+      background-color: #fff;
+      height: 2px;
+    }
+    .table-container img {
+      display: block;
+      margin: auto;
+      /* max-width: 150px; */
+      /* border-radius: 50%; */
+      margin-bottom: 1rem;
+      border: 1px solid;
+    height: 7rem;
+    width: 7rem;
+    background-color: #fff;
+    }
+    .table th, .table td {
+      text-align: left;
+      width: 50%;
+      background-color: #fff;
+    }
+    .social-media-icons {
+      display: flex;
+      align-items: center;
+    }
+    .social-media-icons i {
+      margin-right: 0.5rem;
+    }
+    .center-text {
+      text-align: center;
+    }
+    svg.svg-inline--fa.fa-facebook.fa-w-16 {
+    color: #215eb7;
+}
+svg.svg-inline--fa.fa-instagram.fa-w-14 {
+    color: #cb17af;
+}
+svg.svg-inline--fa.fa-twitter.fa-w-16 {
+    color: #3c83ca;
+}
+svg.svg-inline--fa.fa-youtube.fa-w-18 {
+    color: #ca2b2b;
+}
+svg.svg-inline--fa.fa-snapchat.fa-w-16 {
+    color: #ebd013;
+}
+
+@media (max-width: 500px) {
+  .table-container {
+        width: 100%;
+      }
+      body{
+        padding: 0;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <div class="table-container">
+    <h2>SUBMITTED DATA</h2>
+    <hr>
+    <img id="imagePreview" class="img-fluid" src="" alt="Profile Image">
+    <table id="dataTable" class="table table-bordered mt-4">
+      <thead class="thead-light">
+        <tr>
+          <th>Field</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <tr>
+          <td>First Name</td>
+          <td id="firstName"></td>
+        </tr>
+        <tr>
+          <td>Last Name</td>
+          <td id="lastName"></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td id="email"></td>
+        </tr>
+        <tr>
+          <td>Phone Number</td>
+          <td id="phoneNumber"></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="center-text" style="text-align: center; font-weight: bold;">Social Media Handles</td>
+        </tr>
+        <tr>
+          <td><i class="fab fa-facebook"></i> Facebook</td>
+          <td id="firstName"></td>
+        </tr>
+        <tr>
+          <td><i class="fab fa-instagram"></i> Instagram</td>
+          <td id="firstName"></td>
+        </tr>
+        <tr>
+          <td><i class="fab fa-twitter"></i> Twitter</td>
+          <td id="firstName"></td>
+        </tr>
+        <tr>
+          <td><i class="fab fa-youtube"></i> Youtube</td>
+          <td id="firstName"></td>
+        </tr>
+        <tr>
+          <td><i class="fab fa-tiktok"></i> TikTok</td>
+          <td id="firstName"></td>
+        </tr>
+        <tr>
+          <td><i class="fab fa-snapchat"></i> Snapchat</td>
+          <td id="firstName"></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="center-text" style="text-align: center; font-weight: bold;">Content Type</td>
+        </tr>
+        <tr>
+          <td>Comedy</td>
+          <td id="firstName"></td>
+        </tr>
+        <tr>
+          <td>Motivation</td>
+          <td id="firstName"></td>
+        </tr>
+        <tr>
+          <td>Series</td>
+          <td id="firstName"></td>
+        </tr>
+        <tr>
+          <td>Movies</td>
+          <td id="firstName"></td>
+        </tr>
+        <tr>
+          <td>Vlogs</td>
+          <td id="firstName"></td>
+        </tr>
+        <tr>
+          <td>Gaming</td>
+          <td id="firstName"></td>
+        </tr>
+        <tr>
+          <td>Animation</td>
+          <td id="firstName"></td>
+        </tr>
+        <tr>
+          <td>Education</td>
+          <td id="firstName"></td>
+        </tr>
+        <tr>
+          <td>Food Recipes</td>
+          <td id="firstName"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</body>
+</html>
+

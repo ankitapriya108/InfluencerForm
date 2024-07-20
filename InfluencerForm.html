@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
+  <style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+    .body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+      padding: 4rem 0;
+      background-image: url("./Images/social.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .container {
+      background-color: rgba(61, 162, 137, 0.71);
+      margin: auto;
+      padding: 3rem;
+      width: 60%;
+      border-radius: 2rem;
+      box-shadow: 10px 10px 10px 0 rgba(107, 114, 128, 1);
+    }
+    #image-preview {
+      height: 200px;
+      width: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .names {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+    .name {
+      width: 100%;
+    }
+    /* .hidden {
+      display: flex;
+    } */
+    .container h1{
+        text-align: center;
+        font-weight: 300;
+    }
+    .hidden{
+      display: none;
+    }
+
+    .con {
+    margin: auto;
+    /* padding: 20px; */
+  }
+  /* .con h1{
+    font-weight:;
+  } */
+
+  .heading {
+    /* text-align: center; */
+    margin-bottom: 20px;
+  }
+
+  .social-container {
+    display: flex;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+    margin-bottom: 10px;
+  }
+
+  .social-container div {
+    flex: 1 1 calc(50% - 10px);
+    margin-bottom: 10px;
+  }
+
+  .social-container div:nth-child(odd) {
+    margin-right: 20px; 
+  }
+  .social-container div:nth-child(2)  {
+    margin-right: 20px; 
+  }
+  .social-container label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .social-input {
+    width: 100%;
+    padding: 7px 11px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid white;
+    outline: none;
+    display: none;
+  }
+.other-type{
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+.other-type-label{
+margin-top: 2rem;
+}
+.social-media-inputs{
+      display: none;
+    }
+
+  @media (max-width: 725px){
+    .label-names {
+    margin-bottom: 1rem;
+    
+    display: inline-block;
+    }
+    .names {
+      display: flex;
+     flex-direction: column;
+     
+    }
+  }
+
+    @media (max-width:640px) {
+      .social-container{
+        flex-wrap: wrap;
+      }
+      .con{
+      display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 20px 0 20px 0 ;
+    }
+    .container{
+      width: auto;
+      border-radius: 10px;
+    }
+   
+
+    .social-container {
+      flex-direction: column;
+    }
+
+    .social-container div {
+      flex: 1 1 100%;
+      margin-right: 0; 
+    }
+    .social-container div:nth-child(odd) {
+    margin-right: 0; 
+  }
+  .social-container div:nth-child(2)  {
+    margin-right: 0; 
+  }
+      .content-type{
+      flex-direction: column;
+      /* align-items: center; */
+      gap: 1rem;
+    }
+    .content-input{
+      margin-left: 0;
+    }
+    .content-heading{
+      /* text-align: center; */
+      padding-bottom: 1rem;
+    }
+   
+    }
+    @media (min-width:640px){
+     
+    .content-div{
+margin-left: 1rem;
+    }
+   
+    }
+   
+  </style>
+  <body>
+    <div class="body" style="background-image: url('./Images/social.jpg')">
+      <div
+        class="container"
+        data-aos="zoom-in"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="700"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="false"
+        data-aos-once="true"
+        data-aos-anchor-placement="top-center"
+      >
+        <h1>INFLUENCER FORM</h1>
+        <hr />
+        <form id="form">
+          <div class="image-container " style="display: flex; align-items: center; justify-content: center; margin: 2.5rem 0;">
+            <div style="height: 200px;width: 200px; border-radius: 50%; background-color:white ;display:flex ;justify-content: center; align-items: center; ">
+            
+              <input
+                type="file"
+                accept="image/*"
+                id="fileInput"
+                style="display: none;"
+              />
+              <label for="fileInput">
+                <img id="imagePreview" class="hidden" style="height: 200px; margin-top: 11px; width: 200px; object-fit: cover; border-radius: 50%;" src="" alt="" />
+                <span style="font-size: 3rem">
+                  <i id="personIcon" class="fa-solid fa-user" style="color: rgb(198, 194, 194);font-size: 4rem;"></i>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="names">
+            <div class="name">
+              <label class="label-names" for="firstName" style="font-weight: semibold; font-size: 21px; ">First Name</label> <br>
+              <input type="text" id="firstName" name="firstName" required  style="width: 100%; padding: 7px 11px; border-radius: 4px; border: 1px solid white; outline: none;"/>
+            </div>
+            <div class="name">
+              <label class="label-names" for="lastName" style="font-weight: semibold; font-size: 21px;">Last Name</label> <br>
+              <input type="text" id="lastName" name="lastName" required style="width: 100%; padding: 7px 11px; border-radius: 4px;border: 1px solid white; outline: none;" />
+            </div>
+          </div>
+
+          <div class="names" style="margin:10px 0 0 ;">
+            <div class="name">
+              <label class="label-names" for="email" style="font-weight: semibold; font-size: 21px;">Email</label> <br>
+              <input type="email" id="email" name="email" required style="width: 100%; padding: 7px 11px; border-radius: 4px;border: 1px solid white; outline: none;"  />
+            </div>
+            <div class="name">
+                <label class="label-names" for="contactNumber" style="font-weight: semibold; font-size: 21px;">Contact Number</label> <br>
+                <input
+                  type="number"
+                  id="contactNumber"
+                  name="contactNumber"
+                  required
+                  style="width: 100%; padding: 7px 11px; border-radius: 4px;border: 1px solid white; outline: none;"  
+                />
+              </div>
+    
+            
+          </div>
+
+        <div class="con">
+          <h2 class="heading" style="font-weight: lighter;">Social Media Handles</h2>
+          <div class="social-container">
+            <div>
+              <input type="checkbox" id="facebook" name="facebook" />
+              <label for="facebook">Facebook</label>
+              <input type="text" id="facebookInput" class="social-input" placeholder="Enter your Facebook handle" />
+            </div>
+            <div>
+              <input type="checkbox" id="instagram" name="instagram" />
+              <label for="instagram">Instagram</label>
+              <input type="text" id="instagramInput" class="social-input" placeholder="Enter your Instagram handle" />
+            </div>
+            <div>
+              <input type="checkbox" id="twitter" name="twitter" />
+              <label for="twitter">Twitter</label>
+              <input type="text" id="twitterInput" class="social-input" placeholder="Enter your Twitter handle" />
+            </div>
+          </div>
+          <!-- <div class="social-container"> -->
+           
+          <!-- </div> -->
+          <div class="social-container">
+             
+            <div>
+              <input type="checkbox" id="youtube" name="youtube" />
+              <label for="youtube">YouTube</label>
+              <input type="text" id="youtubeInput" class="social-input" placeholder="Enter your YouTube handle" />
+            </div>
+            <div>
+              <input type="checkbox" id="tiktok" name="tiktok" />
+              <label for="tiktok">TikTok</label>
+              <input type="text" id="tiktokInput" class="social-input" placeholder="Enter your TikTok handle" />
+            </div>
+            <div>
+              <input type="checkbox" id="snapchat" name="snapchat" />
+              <label for="snapchat">Snapchat</label>
+              <input type="text" id="snapchatInput" class="social-input" placeholder="Enter your Snapchat handle" />
+            </div>
+          </div>
+        </div>
+
+          <h2 class="content-heading" style="margin: 10px 0 0 ; font-weight: lighter;">Content Type</h2>
+          <div class="content-div">
+            <div class="content-type" style=" display: flex; justify-content: space-between; margin-top: 10px;">
+            <div style="width: 50%;">
+              <input type="checkbox" id="comedy" name="comedy" />
+              <label for="comedy">Comedy</label>
+            </div>
+            <div class="content-input" style=" width: 50%;;">
+              <input type="checkbox" id="motivation" name="motivation" />
+              <label for="motivation">Motivation</label>
+            </div>
+            <div style="width: 50%;">
+              <input type="checkbox" id="series" name="series" />
+              <label for="series">Series</label>
+            </div>
+        </div>
+<div class="content-type" style="display: flex; justify-content: space-between; margin-top: 10px;">
+            
+            <div class="content-input"  style="width: 50%;">
+              <input type="checkbox" id="movies" name="movies" />
+              <label for="movies">Movies</label>
+            </div>
+            <div style="width: 50%;">
+              <input type="checkbox" id="vlogs" name="vlogs" />
+              <label for="vlogs">Vlogs</label>
+            </div>
+            <div  class="content-input" style="width: 50%; ">
+              <input type="checkbox" id="gaming" name="gaming" />
+              <label for="gaming">Gaming</label>
+            </div>
+        </div>
+        <!-- <div class="content-type" style="display: flex; justify-content: space-between; margin-top: 10px;">
+           
+        </div> -->
+        <div class="content-type" style="display: flex; justify-content: space-between; margin-top: 10px;">
+            <div style="width: 50%;">
+              <input type="checkbox" id="animation" name="animation" />
+              <label for="animation">Animation</label>
+            </div>
+            <div  class="content-input" style="width: 50%; ">
+              <input type="checkbox" id="education" name="education" />
+              <label for="education">Education</label>
+            </div>
+            <div style="width: 50%;">
+              <input type="checkbox" id="foodRecipes" name="foodRecipes" />
+              <label for="foodRecipes">Food Recipes</label>
+            </div>
+        </div>
+        <div class="content-type" style="display: flex; justify-content: space-between; margin-top: 10px;">
+            
+            <div  class="content-input" style="width: 50%;">
+              <input type="checkbox" id="rhymes" name="rhymes" />
+              <label for="rhymes">Rhymes</label>
+            </div>
+        </div>
+          </div>
+
+          <div class="" style="margin-top: 15px;">
+            <label class="other-type-label" for="other" style="font-weight: semibold; font-size: 21px;">Add Other Content Type</label>
+            <div class="other-type">
+              <input
+                type="text"
+                id="other"
+                placeholder="Enter other content type"
+                name="other"
+                style="width: 90%; padding: 7px 11px; border-radius: 4px;border: 1px solid white; outline: none;"
+              />
+              <button
+                id="addContentType"
+                class="addbtn"
+                style="
+                  background: linear-gradient(
+                    rgba(0, 0, 255, 0.575),
+                    rgba(255, 0, 0, 0.429)
+                  );
+                  color: #fff;
+                  padding: 0.4rem 1rem;
+                  font-size: 16px;
+                  font-weight: 700;
+                  border-radius: 0.25rem;
+                  margin-left: 0.5rem;
+                  border: none;
+
+                "
+              >
+                Add
+              </button>
+            </div>
+          </div>
+
+          <div id="additionalContentTypes"></div>
+          <div class="Submit" style="display: flex; justify-content: center;margin-top: 10px;">
+            <button
+              id="submit"
+              class="submitbtn"
+              style="
+                background: linear-gradient(
+                  rgba(0, 0, 255, 0.575),
+                  rgba(255, 0, 0, 0.429)
+                );
+                color: #fff;
+                  padding: 0.4rem 1rem;
+                  font-size: 16px;
+                  font-weight: 700;
+                  border-radius: 0.25rem;
+                  margin-left: 0.5rem;
+                  border: none;
+
+    
+              "
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script type="module">
+    
+    document.getElementById('fileInput').addEventListener('change', function(event){
+      const file = event.target.files[0]
+      if(file){
+        const reader = new FileReader();
+        reader.onload = function(e){
+document.getElementById('imagePreview').src = e.target.result
+document.getElementById('imagePreview').classList.remove('hidden')
+document.getElementById('personIcon').classList.add("hidden")
+        }
+        reader.readAsDataURL(file)
+       
+      }
+     
+    })
+
+      document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+  checkbox.addEventListener("change", (e) => {
+    const inputId = e.target.id + "Input";
+    let inputElement = document.getElementById(inputId);
+    
+    if (!inputElement) {
+      inputElement = document.createElement("input");
+      inputElement.id = inputId;
+      inputElement.type = "text";
+      inputElement.style.width = "90%";
+      inputElement.style.padding = "7px 11px";
+      inputElement.style.borderRadius = "4px";
+      inputElement.style.border = "1px solid white";
+      inputElement.style.outline = "none";
+      inputElement.style.marginTop = "0.5rem";
+      inputElement.style.display = "none"; 
+      e.target.parentElement.appendChild(inputElement);
+    }
+
+    if (e.target.checked) {
+      inputElement.style.display = "block";
+    } else {
+      inputElement.style.display = "none";
+    }
+  });
+});
+     
+
+
+        document.getElementById("addContentType")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    const additionalContentTypes = document.getElementById(
+      "additionalContentTypes"
+    );
+    const newDiv = document.createElement("div");
+    newDiv.style.marginBottom = "1rem";
+    newDiv.style.paddingTop = "0.75rem";
+    const newInput = document.createElement("input");
+    newInput.style.width = "100%";
+    newInput.style.padding = "7px 11px";
+    newInput.style.borderRadius = "4px";
+    newInput.style.border = "1px solid white";
+    newInput.style.outline = "none";
+    newInput.type = "text";
+    newInput.name = "other";
+    newInput.placeholder = "Enter other content type";
+    newDiv.appendChild(newInput);
+    additionalContentTypes.appendChild(newDiv);
+  });
+    </script>
+  </body>
+</html>

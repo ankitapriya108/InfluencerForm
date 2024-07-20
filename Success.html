@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+    background: linear-gradient(to left, rgb(47 173 102), white,white,white, rgb(47 173 102));
+  width: 40%;
+  border: 1px solid #ccc;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.365);
+  border-radius: 1.5rem;
+  padding: 1rem;
+}
+
+.image {
+    height: 10rem;
+    width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.image img {
+  height: 100%;
+  width: 100%;
+}
+
+.alert {
+  color: #34C759;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.alert h1 {
+  font-weight: bold;
+  text-align: center;
+}
+.alert h2 {
+ 
+  text-align: center;
+}
+
+.alert span {
+  display: block;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.button a {
+  color: #3498DB;
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.button a:hover {
+  color: #FF3737;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    max-width: 300px;
+  }
+  .image img {
+    max-width: 80px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+    max-width: 250px;
+  }
+  .image img {
+    max-width: 60px;
+  }
+}
+
+</style>
+<body>
+    <div class="container">
+        <div class="card">
+          <div class="image">
+            <img src="./Images/successful.png" alt="">
+          </div>
+          <div class="alert">
+            <h1><strong>Thank You!</strong></h1>
+            <h2>Your form has been successfully submitted.</h2>
+          </div>
+          <div class="button">
+            <a href="#">Go Back</a>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

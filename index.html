@@ -1,0 +1,921 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
+  <style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+    .body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+      background-image: url("./Images/social.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .container {
+      background-color: rgba(61, 162, 137, 0.71);
+      margin: auto;
+      padding: 3rem;
+      width: 60%;
+      border-radius: 2rem;
+      box-shadow: 10px 10px 10px 0 rgba(107, 114, 128, 1);
+    }
+    #image-preview {
+      height: 200px;
+      width: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .names {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+    .name {
+      width: 100%;
+    }
+    
+    .container h1{
+        text-align: center;
+        font-weight: 300;
+    }
+    .hidden{
+      display: none;
+    }
+
+    .card {
+    background: linear-gradient(to left, rgb(47 173 102), white,white,white, rgb(47 173 102));
+  width: 40%;
+  border: 1px solid #ccc;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.365);
+  border-radius: 1.5rem;
+  padding: 1rem;
+}
+
+.image {
+    height: 10rem;
+    width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.image img {
+  height: 100%;
+  width: 100%;
+}
+
+.alert {
+  color: #34C759;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.alert h1 {
+  font-weight: bold;
+  text-align: center;
+}
+.alert h2 {
+ 
+  text-align: center;
+}
+
+.alert span {
+  display: block;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.button a {
+  color: #3498DB;
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.button a:hover {
+  color: #FF3737;
+}
+
+
+  </style>
+  <body>
+    <div class="body" style="background-image: url('./Images/social.jpg')">
+      <div
+        class="container"
+        data-aos="zoom-in"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="700"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="false"
+        data-aos-once="true"
+        data-aos-anchor-placement="top-center"
+      >
+        <h1>INFLUENCER FORM</h1>
+        <hr />
+        <form id="form">
+          <div class="image-container " style="display: flex; align-items: center; justify-content: center; margin: 2.5rem 0;">
+            <div style="height: 200px;width: 200px; border-radius: 50%; background-color:white ;display:flex ;justify-content: center; align-items: center; ">
+            
+              <input
+                type="file"
+                accept="image/*"
+                id="fileInput"
+                style="display: none;"
+              />
+              <label for="fileInput">
+                <img id="imagePreview" class="hidden" style="height: 200px; margin-top: 11px; width: 200px; object-fit: cover; border-radius: 50%;" src="" alt="" />
+                <span style="font-size: 3rem">
+                  <i id="personIcon" class="fa-solid fa-user" style="color: rgb(198, 194, 194);font-size: 4rem;"></i>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="names">
+            <div class="name">
+              <label for="firstName" style="font-weight: semibold; font-size: 21px; ">First Name</label> <br>
+              <input type="text" id="firstName" name="firstName" required  style="width: 100%; padding: 7px 11px; border-radius: 4px; border: 1px solid white; outline: none;"/>
+            </div>
+            <div class="name">
+              <label for="lastName" style="font-weight: semibold; font-size: 21px;">Last Name</label> <br>
+              <input type="text" id="lastName" name="lastName" required style="width: 100%; padding: 7px 11px; border-radius: 4px;border: 1px solid white; outline: none;" />
+            </div>
+          </div>
+
+          <div class="names" style="margin:10px 0 0 ;">
+            <div class="name">
+              <label for="email" style="font-weight: semibold; font-size: 21px;">Email</label> <br>
+              <input type="email" id="email" name="email" required style="width: 100%; padding: 7px 11px; border-radius: 4px;border: 1px solid white; outline: none;"  />
+            </div>
+            <div class="name">
+                <label for="contactNumber" style="font-weight: semibold; font-size: 21px;">Contact Number</label> <br>
+                <input
+                  type="number"
+                  id="contactNumber"
+                  name="contactNumber"
+                  required
+                  style="width: 100%; padding: 7px 11px; border-radius: 4px;border: 1px solid white; outline: none;"  
+                />
+              </div>
+    
+            
+          </div>
+          
+          <h2 style="margin: 10px 0 0 ; font-weight: lighter;">Social Media Handles</h2>
+          <div>
+            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                <div style="width: 50%;">
+              <input type="checkbox" id="facebook" name="facebook" />
+              <label for="facebook">Facebook</label> 
+              <input
+                type="text"
+                id="facebookInput"
+                class="socialInput"
+                placeholder="Enter your Facebook handle"
+                style="width: 390px; padding: 7px 11px; border-radius: 4px;border: 1px solid white; outline: none; display: none;"  
+              />
+              </div>
+              <div style="width: 50%; margin-left: 2rem;">
+                <input type="checkbox" id="instagram" name="instagram" />
+                <label for="instagram">Instagram</label>
+                <input
+                  type="text"
+                  id="instagramInput"
+                  class="socialInput"
+                  placeholder="Enter your Instagram handle"
+                  style="width: 390px; padding: 7px 25px 7px 11px; border-radius: 4px;border: 1px solid white; outline: none; display: none;"  
+                />
+              </div>
+            </div>
+           <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+            <div style="width: 50%;">
+              <input type="checkbox" id="twitter" name="twitter" />
+              <label for="twitter">Twitter</label>
+              <input
+                type="text"
+                id="twitterInput"
+                class="socialInput"
+                placeholder="Enter your Twitter handle"
+                style="width: 390px; padding: 7px 33px 7px 11px; border-radius: 4px;border: 1px solid white; outline: none; display: none;"  
+              />
+            </div>
+            <div style="width: 50%; margin-left: 2rem;">
+              <input type="checkbox" id="youtube" name="youtube" />
+              <label for="youtube">YouTube</label>
+              <input
+                type="text"
+                id="youtubeInput"
+                class="socialInput"
+                placeholder="Enter your YouTube handle"
+                style="width: 390px; padding: 7px 35px 7px 11px; border-radius: 4px;border: 1px solid white; outline: none; display: none;"  
+              />
+            </div>
+        </div>
+            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+            <div style="width: 50%;">
+              <input type="checkbox" id="tiktok" name="tiktok" />
+              <label for="tiktok">TikTok</label>
+              <input
+                type="text"
+                id="tiktokInput"
+                class="socialInput"
+                placeholder="Enter your TikTok handle"
+                style="width: 390px; padding: 7px 34px 7px 11px; border-radius: 4px;border: 1px solid white; outline: none; display: none;"  
+              />
+            </div>
+            <div style="width: 50%; margin-left: 2rem;">
+              <input type="checkbox" id="snapchat" name="snapchat" />
+              <label for="snapchat">Snapchat</label>
+              <input
+                type="text"
+                id="snapchatInput"
+                class="socialInput"
+                placeholder="Enter your Snapchat handle"
+                style="width: 390px; padding: 7px 31px 7px 11px; border-radius: 4px;border: 1px solid white; outline: none; display: none;"  
+              />
+            </div>
+        </div>
+          </div>
+
+          <h2 style="margin: 10px 0 0 ; font-weight: lighter;">Content Type</h2>
+          <div>
+            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+            <div style="width: 50%;">
+              <input type="checkbox" id="comedy" name="comedy" />
+              <label for="comedy">Comedy</label>
+            </div>
+            <div style="width: 50%; margin-left: 2rem;">
+              <input type="checkbox" id="motivation" name="motivation" />
+              <label for="motivation">Motivation</label>
+            </div>
+        </div>
+<div style="display: flex; justify-content: space-between; margin-top: 10px;">
+            <div style="width: 50%;">
+              <input type="checkbox" id="series" name="series" />
+              <label for="series">Series</label>
+            </div>
+            <div style="width: 50%; margin-left: 2rem;">
+              <input type="checkbox" id="movies" name="movies" />
+              <label for="movies">Movies</label>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+            <div style="width: 50%;">
+              <input type="checkbox" id="vlogs" name="vlogs" />
+              <label for="vlogs">Vlogs</label>
+            </div>
+            <div style="width: 50%; padding-left: 1rem;">
+              <input type="checkbox" id="gaming" name="gaming" />
+              <label for="gaming">Gaming</label>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+            <div style="width: 50%;">
+              <input type="checkbox" id="animation" name="animation" />
+              <label for="animation">Animation</label>
+            </div>
+            <div style="width: 50%; padding-left: 1rem;">
+              <input type="checkbox" id="education" name="education" />
+              <label for="education">Education</label>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+            <div style="width: 50%;">
+              <input type="checkbox" id="foodRecipes" name="foodRecipes" />
+              <label for="foodRecipes">Food Recipes</label>
+            </div>
+            <div style="width: 50%; padding-left: 1rem;">
+              <input type="checkbox" id="rhymes" name="rhymes" />
+              <label for="rhymes">Rhymes</label>
+            </div>
+        </div>
+          </div>
+
+          <div class="" style="margin-top: 15px;">
+            <label for="other" style="font-weight: semibold; font-size: 21px;">Add Other Content Type</label>
+            <div class="flex items-center">
+              <input
+                type="text"
+                id="other"
+                placeholder="Enter other content type"
+                name="other"
+                style="width: 90%; padding: 7px 11px; border-radius: 4px;border: 1px solid white; outline: none;"
+              />
+              <button
+                id="addContentType"
+                class="addbtn"
+                style="
+                  background: linear-gradient(
+                    rgba(0, 0, 255, 0.575),
+                    rgba(255, 0, 0, 0.429)
+                  );
+                  color: #fff;
+                  padding: 0.4rem 1rem;
+                  font-size: 16px;
+                  font-weight: 700;
+                  border-radius: 0.25rem;
+                  margin-left: 0.5rem;
+                  border: none;
+
+                "
+              >
+                Add
+              </button>
+            </div>
+          </div>
+
+          <div id="additionalContentTypes"></div>
+          <div class="Submit" style="display: flex; justify-content: center;margin-top: 10px;">
+            <button
+              id="submit"
+              class="submitbtn"
+              style="
+                background: linear-gradient(
+                  rgba(0, 0, 255, 0.575),
+                  rgba(255, 0, 0, 0.429)
+                );
+                color: #fff;
+                  padding: 0.4rem 1rem;
+                  font-size: 16px;
+                  font-weight: 700;
+                  border-radius: 0.25rem;
+                  margin-left: 0.5rem;
+                  border: none;
+
+    
+              "
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+
+
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="image">
+        <img src="./Images/successful.png" alt="">
+      </div>
+      <div class="alert">
+        <h1><strong>Thank You!</strong></h1>
+        <h2>Your form has been successfully submitted.</h2>
+      </div>
+      <div class="button">
+        <a href="#">Go Back</a>
+      </div>
+    </div>
+
+
+
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script type="module">
+    //   document.getElementById('fileInput').addEventListener('change', function(event) {
+    //         const file = event.target.files[0];
+    //         if (file) {
+    //             const reader = new FileReader();
+    //             reader.onload = function(e) {
+    //                 document.getElementById('imagePreview').src = e.target.result;
+    //                 document.getElementById('imagePreview').classList.remove('hidden');
+    //                 document.querySelector('label span').classList.add('hidden');
+    //             };
+    //             reader.readAsDataURL(file);
+    //         }
+    //     });
+    document.getElementById('fileInput').addEventListener('change', function(event){
+      const file = event.target.files[0]
+      if(file){
+        const reader = new FileReader();
+        reader.onload = function(e){
+document.getElementById('imagePreview').src = e.target.result
+document.getElementById('imagePreview').classList.remove('hidden')
+document.getElementById('personIcon').classList.add("hidden")
+        }
+        reader.readAsDataURL(file)
+       
+      }
+     
+    })
+  
+
+    document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+  checkbox.addEventListener("change", (e) => {
+    const inputId = e.target.id + "Input";
+    let inputElement = document.getElementById(inputId);
+    
+    if (!inputElement) {
+      inputElement = document.createElement("input");
+      inputElement.id = inputId;
+      inputElement.type = "text";
+      inputElement.style.width = "90%";
+      inputElement.style.padding = "7px 11px";
+      inputElement.style.borderRadius = "4px";
+      inputElement.style.border = "1px solid white";
+      inputElement.style.outline = "none";
+      inputElement.style.marginTop = "0.5rem";
+      inputElement.style.display = "none"; // Initially hide the input
+      e.target.parentElement.appendChild(inputElement);
+    }
+
+    if (e.target.checked) {
+      inputElement.style.display = "block";
+    } else {
+      inputElement.style.display = "none";
+    }
+  });
+});
+
+
+
+      document.getElementById("addContentType")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    const additionalContentTypes = document.getElementById(
+      "additionalContentTypes"
+    );
+    const newDiv = document.createElement("div");
+    newDiv.style.marginBottom = "1rem";
+    newDiv.style.paddingTop = "0.75rem";
+    const newInput = document.createElement("input");
+    newInput.style.width = "100%";
+    newInput.style.padding = "7px 11px";
+    newInput.style.borderRadius = "4px";
+    newInput.style.border = "1px solid white";
+    newInput.style.outline = "none";
+    newInput.type = "text";
+    newInput.name = "other";
+    newInput.placeholder = "Enter other content type";
+    newDiv.appendChild(newInput);
+    additionalContentTypes.appendChild(newDiv);
+  });
+    </script>
+  </body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  </head>
+  <style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+
+    }
+    .body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+      padding: 5rem 0;
+      background-image: url("./Images/social.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .influencer-container {
+     background-color: rgba(61, 162, 137, 0.71); 
+      margin: auto;
+      padding: 3rem;
+      width: 60%;
+      border-radius: 2rem;
+      /* box-shadow: 10px 10px 10px 0 rgba(107, 114, 128, 1); */
+    }
+    #image-preview {
+      height: 200px;
+      width: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .names {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+    .name {
+      width: 100%;
+    }
+    /* .hidden {
+      display: flex;
+    } */
+    .container h1{
+        text-align: center;
+        font-weight: 300;
+    }
+    .hidden{
+      display: none;
+    }
+
+    .con {
+    margin: auto;
+    padding: 20px;
+  }
+
+  .heading {
+    /* text-align: center; */
+    margin-bottom: 20px;
+  }
+
+
+  .social-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 30%;
+}
+
+.social-item input[type="text"] {
+    margin-left: 10px;
+    flex-grow: 1;
+}
+.social-item input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+
+  .social-container label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .social-input {
+    width: 100%;
+    padding: 7px 11px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid white;
+    outline: none;
+    display: none;
+  }
+.other-type{
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+.other-type-label{
+margin-top: 2rem;
+}
+.social-media-inputs{
+      display: none;
+    }
+    .content-container {
+    width: 100%;
+}
+
+.content-type-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.content-item {
+    display: flex;
+    align-items: center;
+    width: 23%; /* Adjusted to fit four items in a row with some margin */
+}
+
+.circular-checkbox {
+    width: 15px;
+    height: 15px;
+    border-radius: 70%;
+    margin-right: 10px;
+}
+
+label {
+    font-family: cursive;
+    font-size: 20px;
+    color:#eaffc5;
+}
+
+
+
+
+  @media (max-width: 725px){
+    .label-names {
+    margin-bottom: 1rem;
+
+    display: inline-block;
+    }
+    .names {
+      display: flex;
+     flex-direction: column;
+
+    }
+  }
+
+    @media (max-width:640px) {
+      .con{
+      display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 20px 0 20px 0 ;
+    }
+    .container{
+      width: auto;
+      border-radius: 10px;
+    }
+
+
+    .social-container {
+      flex-direction: column;
+    }
+
+    .social-container div {
+      flex: 1 1 100%;
+      margin-right: 0;
+    }
+    .social-container div:nth-child(odd) {
+    margin-right: 0;
+  }
+
+
+/* Optional: Custom styles for checked state */
+
+
+
+    }
+    @media (min-width:640px){
+      .content-input{
+      margin-left: 2rem;
+    }
+}
+</style>
+<div class="influencer" style="background-color:#00B98E; border-radius:15px;">
+    <div class="container" data-aos="zoom-in" data-aos-offset="200" data-aos-delay="50" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true" data-aos-anchor-placement="top-center">
+        <h3 style="text-align:center; font-family:revert; font-size: 34px;">Influencer Submission</h3>
+        <hr />
+        <style>
+            html, body {
+              height: 100%;
+              margin: 0;
+              padding: 0;
+              font-family: Arial, sans-serif;
+              box-sizing: border-box;
+            }
+
+            .flash-message {
+              display: none; /* Initially hidden */
+              position: fixed;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              text-align: center;
+              background: linear-gradient(to left, #2fad66ad, white, white, white, #2fad66ad);
+              padding: 2rem;
+              border-radius: 8px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              width: 100%;
+              max-width: 600px;
+              z-index: 1000;
+              transition: opacity 0.5s ease; /* Smooth fade out */
+            }
+
+            .flash-message h2 {
+              margin-bottom: 1rem;
+              color: rgb(10, 146, 87);
+            }
+
+            .flash-message p {
+              margin-bottom: 2rem;
+              color: rgb(10, 146, 87);
+            }
+
+            .flash-message img {
+              height: 10rem;
+              width: 10rem;
+              display: block;
+              margin: 0 auto;
+              margin-bottom: 1rem;
+            }
+
+            .flash-message button {
+              background-color: darkcyan;
+              border: none;
+              color: #ffffff;
+              padding: 10px 20px;
+              font-size: 15px;
+              cursor: pointer;
+              border-radius: 4px;
+              transition: background-color 0.3s, color 0.3s;
+            }
+
+            .flash-message button:hover {
+              background-color: rgb(197, 95, 6);
+              color: black;
+            }
+
+            .form-container {
+              padding: 1rem;
+            }
+          </style>
+
+        <form id="form" method="POST" action="{{ route('form.store') }}" enctype="multipart/form-data">
+            @csrf
+            <div class="image-container" style="display: flex; align-items: center; justify-content: center; margin: 2.5rem 0; flex-direction: column;">
+                <div style="height: 200px; width: 200px; border-radius: 50%; background-color: white; display: flex; justify-content: center; align-items: center;">
+                    <input type="file" accept="image/*" id="fileInput" style="display: none;" />
+                    <label for="fileInput" style="display: flex; flex-direction: column; align-items: center; cursor: pointer;">
+                        <img id="imagePreview" class="hidden" style="height: 200px; width: 200px; object-fit: cover; border-radius: 50%;" src="" alt="" />
+                        <i id="personIcon" class="fa-solid fa-user" style="color: rgb(198, 194, 194); font-size: 4rem;"></i>
+                        <span style="font-size: 1rem; color: gray; margin-top: 10px;">Upload Image</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="names">
+                <div class="name" style="text-align: center;">
+                    <label class="label-names" for="firstName" style="font-weight: semibold; font-size: 21px; color:#eaffc5;font-family:cursive;">First Name</label><br>
+                    <input type="text" id="firstName" name="firstName" required style="width: 100%; padding: 7px 11px; border-radius: 4px; border: 1px solid white; outline: none;" />
+                </div>
+                <div class="name" style="text-align: center;">
+                    <label class="label-names" for="lastName" style="font-weight: semibold; font-size: 21px; color:#eaffc5;font-family:cursive;">Last Name</label><br>
+                    <input type="text" id="lastName" name="lastName" required style="width: 100%; padding: 7px 11px; border-radius: 4px; border: 1px solid white; outline: none;" />
+                </div>
+            </div>
+
+            <div class="names" style="text-align: center;">
+                <div class="name">
+                    <label class="label-names" for="email" style="font-weight: semibold; font-size: 21px; color:#eaffc5;font-family:cursive;">Email</label><br>
+                    <input type="email" id="email" name="email" required style="width: 100%; padding: 7px 11px; border-radius: 4px; border: 1px solid white; outline: none;" />
+                </div>
+                <div class="name" style="text-align: center;">
+                    <label class="label-names" for="contactNumber" name="number" required style="font-weight: semibold; font-size: 21px; color:#eaffc5;font-family:cursive;">Contact Number</label><br>
+                    <input type="number" id="contactNumber" name="contactNumber" required style="width: 100%; padding: 7px 11px; border-radius: 4px; border: 1px solid white; outline: none;" />
+                </div>
+            </div>
+
+            <div class="con">
+                <h2 class="heading">Social Media Handles</h2>
+                <div class="social-container">
+                    <div class="social-item">
+                        <input type="checkbox" id="facebook" name="social_media[]" value="facebook" />
+                        <label for="facebook" style="color:#eaffc5;font-family:cursive;font-size:20px;">Facebook</label>
+                        <input type="text" id="facebookInput" name="facebook_handle" class="social-input" placeholder="Enter your Facebook handle" />
+                    </div>
+                    <div class="social-item">
+                        <input type="checkbox" id="instagram" name="social_media[]" value="instagram" />
+                        <label for="instagram" style="color:#eaffc5;font-family:cursive;font-size:20px;">Instagram</label>
+                        <input type="text" id="instagramInput" name="instagram_handle" class="social-input" placeholder="Enter your Instagram handle" />
+                    </div>
+                    <div class="social-item">
+                        <input type="checkbox" id="twitter" name="social_media[]" value="twitter" />
+                        <label for="twitter" style="color:#eaffc5;font-family:cursive;font-size:20px;">Twitter</label>
+                        <input type="text" id="twitterInput" name="twitter_handle" class="social-input" placeholder="Enter your Twitter handle" />
+                    </div>
+                    <div class="social-item">
+                        <input type="checkbox" id="youtube" name="social_media[]" value="youtube" />
+                        <label for="youtube" style="color:#eaffc5;font-family:cursive;font-size:20px;">YouTube</label>
+                        <input type="text" id="youtubeInput" name="youtube_handle" class="social-input" placeholder="Enter your YouTube handle" />
+                    </div>
+                    <div class="social-item">
+                        <input type="checkbox" id="tiktok" name="social_media[]" value="tiktok" />
+                        <label for="tiktok" style="color:#eaffc5;font-family:cursive;font-size:20px;">TikTok</label>
+                        <input type="text" id="tiktokInput" name="tiktok_handle" class="social-input" placeholder="Enter your TikTok handle" />
+                    </div>
+                    <div class="social-item">
+                        <input type="checkbox" id="snapchat" name="social_media[]" value="snapchat" />
+                        <label for="snapchat" style="color:#eaffc5;font-family:cursive;font-size:20px;">Snapchat</label>
+                        <input type="text" id="snapchatInput" name="snapchat_handle" class="social-input" placeholder="Enter your Snapchat handle" />
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="content-heading" style="margin: 10px 0 0; font-weight: lighter;">Content Type</h2>
+
+            <div class="content-container">
+                <div class="content-type-row">
+                    <div class="content-item">
+                        <input type="checkbox" id="comedy" name="contentTypes[]" value="Comedy" class="circular-checkbox" />
+                        <label for="comedy">Comedy</label>
+                    </div>
+                    <div class="content-item">
+                        <input type="checkbox" id="motivation" name="contentTypes[]" value="Motivation" class="circular-checkbox" />
+                        <label for="motivation">Motivation</label>
+                    </div>
+                    <div class="content-item">
+                        <input type="checkbox" id="series" name="contentTypes[]" value="Health" class="circular-checkbox" />
+                        <label for="series">Health</label>
+                    </div>
+                    <div class="content-item">
+                        <input type="checkbox" id="movies" name="contentTypes[]" value="Movies" class="circular-checkbox" />
+                        <label for="movies">Movies</label>
+                    </div>
+                </div>
+                <div class="content-type-row">
+                    <div class="content-item">
+                        <input type="checkbox" id="vlogs" name="contentTypes[]" value="Vlogs" class="circular-checkbox" />
+                        <label for="vlogs">Vlogs</label>
+                    </div>
+                    <div class="content-item">
+                        <input type="checkbox" id="gaming" name="contentTypes[]" value="Gaming" class="circular-checkbox" />
+                        <label for="gaming">Gaming</label>
+                    </div>
+                    <div class="content-item">
+                        <input type="checkbox" id="animation" name="contentTypes[]" value="Animation" class="circular-checkbox" />
+                        <label for="animation">Animation</label>
+                    </div>
+                    <div class="content-item">
+                        <input type="checkbox" id="education" name="contentTypes[]" value="Education" class="circular-checkbox" />
+                        <label for="education">Education</label>
+                    </div>
+                </div>
+                <div class="content-type-row">
+                    <div class="content-item">
+                        <input type="checkbox" id="foodRecipes" name="contentTypes[]" value="Food Recipes" class="circular-checkbox" />
+                        <label for="foodRecipes">Food Recipes</label>
+                    </div>
+                    <div class="content-item">
+                        <input type="checkbox" id="lifestyle" name="contentTypes[]" value="Lifestyle" class="circular-checkbox" />
+                        <label for="lifestyle">Lifestyle</label>
+                    </div>
+                    <div class="content-item">
+                        <input type="checkbox" id="rhymes" name="contentTypes[]" value="Rhymes" class="circular-checkbox" />
+                        <label for="rhymes">Rhymes</label>
+                    </div>
+                    <div class="content-item">
+                        <input type="checkbox" id="addContentType" name="contentTypes[]" value="Add another content type" class="circular-checkbox" />
+                        <label for="addContentType">Add another content type</label>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <button type="submit" style="
+            display: block;
+            width: 200px;
+            height: 50px;
+            margin: 20px auto;
+            background-color: darkcyan;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-align: center;
+        ">
+            Submit
+        </button>
+        </form>
+    </div>
+</div>
+@if(session('success'))
+<div id="flashMessage" class="flash-message">
+  <img src="{{ asset('Img/successful.png') }}" alt="Success">
+  <h2><strong>Thank You!!!</strong></h2>
+  <p>{{ session('success') }}</p>
+  <button onclick="closeFlashMessage()">Close</button>
+</div>
+@endif

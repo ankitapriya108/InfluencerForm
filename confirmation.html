@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Submission Confirmation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f2f2f2;
+    }
+    .container {
+      text-align: center;
+      background: linear-gradient(to left,#2fad66ad,white,white,white,#2fad66ad);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .container h2 {
+      margin-bottom: 1rem;
+    }
+    .container p {
+      margin-bottom: 2rem;
+    }
+    .btn-container {
+      margin-top: 2rem;
+    }
+    .btn-container button {
+      background-color: darkcyan;
+      border: none;
+      color: #ffffff;
+      padding: 3px 15px;
+      font-size: 15px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .btn-container button:hover {
+      background-color: rgb(197, 95, 6);
+      color: black;
+      
+    }
+    .container h2 {
+      color: rgb(10, 146, 87);
+    }
+    .container p {
+      color: rgb(10, 146, 87);
+    }
+    .image {
+    height: 10rem;
+    width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.image img {
+  height: 100%;
+  width: 100%;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="image">
+      <img src="./Images/successful.png" alt="">
+    </div>
+    <h2> <strong>Thank You!!!</strong> </h2>
+    <p>Your form has been successfully submitted.</p>
+    <div class="btn-container">
+      <button id="viewDataBtn">View Submitted Data</button>
+       
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("viewDataBtn").addEventListener("click", function () {
+   
+      window.location.href = "submitted-data.html";
+    });
+  </script>
+</body>
+</html>

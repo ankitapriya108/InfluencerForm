@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submitted Data</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    .container {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 80%;
+    }
+    .container h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .container img {
+      display: block;
+      margin: auto;
+      max-width: 100%;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+      text-align: left;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Submitted Data</h2>
+    <img id="imagePreview" src="" alt="Profile Image">
+    <table id="dataTable">
+      <thead>
+        <tr>
+          <th>Field</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+      
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+   
+    const formData = JSON.parse(localStorage.getItem("formData"));
+
+    const imagePreview = document.getElementById("imagePreview");
+    if (formData && formData.image) {
+      imagePreview.src = formData.image;
+      imagePreview.classList.remove("hidden");
+    }
+
+    const tableBody = document.getElementById("tableBody");
+    if (formData) {
+      for (const [key, value] of Object.entries(formData)) {
+        if (key !== "image") {
+          const row = document.createElement("tr");
+          row.innerHTML = `<td>${key}</td><td>${value}</td>`;
+          tableBody.appendChild(row);
+        }
+      }
+    }
+
+  
+    localStorage.removeItem("formData");
+  </script>
+</body>
+</html>
