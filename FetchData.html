@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Data from API</title>
+    <style>
+        .product-card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            text-align: center;
+        }
+        .product-card img {
+            max-width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Products</h1>
+    <div id="product-container"></div>
+
+    <script>
+       
+        function fetchData() {
+            const apiUrl = 'https://api-backend-s5jz.onrender.com/prod';
+
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data); 
+                    displayData(data); 
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
+        }
+
+      
+        function displayData(data) {
+            const productContainer = document.getElementById('product-container');
+
+            data.forEach(item => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+
+                const productName = document.createElement('h2');
+                productName.textContent = item.name; 
+
+                const productImage = document.createElement('img');
+                productImage.src = item.image;
+                productImage.alt = item.name;
+
+                productCard.appendChild(productName);
+                productCard.appendChild(productImage);
+
+                productContainer.appendChild(productCard);
+            });
+        }
+
+      
+        document.addEventListener('DOMContentLoaded', fetchData);
+    </script>
+</body>
+</html>
