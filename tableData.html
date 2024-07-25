@@ -1,0 +1,972 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Data Table</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .table-container {
+        margin: 20px 50px;
+        padding: 0 10px;
+      }
+      body {
+        background-color: rgba(61, 162, 137, 0.71);
+      }
+      table {
+        border: 2px solid black !important;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.403);
+      }
+      th {
+        background-color: #374371 !important;
+        color: #fff !important;
+        text-align: center;
+      }
+      td{
+        text-align: center;
+      }
+      .hover-table tr:hover {
+            background-color: blue !important; /* Change this to your preferred hover color */
+            color: white !important; /* This will change the text color to white for better contrast */
+        }
+      .pagination {
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .table-container h2 {
+        background: -webkit-linear-gradient(#a82f2f, #2b2020);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      @media (max-width: 1200px) {
+        .table-container {
+          margin: 50px 10px;
+        }
+      }
+      @media (max-width: 1100px) {
+        .button {
+          display: grid;
+          justify-content: center;
+          align-items: center;
+        }
+        button.btn.btn-sm.btn-danger {
+          margin-top: 2px;
+        }
+      }
+      @media (max-width: 850px) {
+        .table-container {
+          min-width: 850px;
+          margin: 50px 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="table-container">
+      <h2 id="tableTitle" class="text-center text-white">Form Data Table</h2>
+      <table id="dataTable" class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Sr No.</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Contact No.</th>
+            <th>Social Media</th>
+            <th>Content Types</th>
+            <th>Thumbnail Image</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody class="hover-table">
+          <tr>
+            <td>1</td>
+            <td>Ram</td>
+            <td>Sharma</td>
+            <td>ram@gmail.com</td>
+            <td>84659631587</td>
+            <td>@ramsharma</td>
+            <td>Education</td>
+            <td><img src="thumbnail1.jpg" alt="Thumbnail 1" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Shyam</td>
+            <td>Sharma</td>
+            <td>shyam@gmail.com</td>
+            <td>9876543210</td>
+            <td>@shyamsharma</td>
+            <td>Movie</td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail1.jpg" alt="Thumbnail 1" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail1.jpg" alt="Thumbnail 1" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail1.jpg" alt="Thumbnail 1" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail1.jpg" alt="Thumbnail 1" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail1.jpg" alt="Thumbnail 1" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>18</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail1.jpg" alt="Thumbnail 1" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>19</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail1.jpg" alt="Thumbnail 1" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>21</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>22</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail1.jpg" alt="Thumbnail 1" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>23</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>24</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>25</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>26</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>27</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>28</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>29</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>30</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pagination">
+        <button id="prevBtn" class="btn btn-primary" style="display: none">
+          Previous
+        </button>
+        <button id="nextBtn" class="btn btn-primary">Next</button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const table = document.getElementById("dataTable");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const tableTitle = document.getElementById("tableTitle");
+        const dataTable = document.getElementById("dataTable");
+        const rowsPerPage = 10;
+        let currentPage = 1;
+
+        function showPage(page) {
+          const rows = table.querySelectorAll("tbody tr");
+          const start = (page - 1) * rowsPerPage;
+          const end = start + rowsPerPage;
+
+          rows.forEach((row, index) => {
+            if (index >= start && index < end) {
+              row.style.display = "";
+            } else {
+              row.style.display = "none";
+            }
+          });
+
+          if (currentPage === 1) {
+            prevBtn.style.display = "none";
+          } else {
+            prevBtn.style.display = "inline-block";
+            prevBtn.style.margin = "10px";
+          }
+
+          if (end >= rows.length) {
+            nextBtn.style.display = "none";
+          } else {
+            nextBtn.style.display = "inline-block";
+            nextBtn.style.margin = "10px";
+          }
+          if (page > 1) {
+            tableTitle.style.display = "none";
+            dataTable.style.margin = "10px 0px 0px";
+          } else {
+            tableTitle.style.display = "block";
+          }
+        }
+
+        showPage(currentPage);
+
+        prevBtn.addEventListener("click", function () {
+          if (currentPage > 1) {
+            currentPage--;
+            showPage(currentPage);
+          }
+        });
+
+        nextBtn.addEventListener("click", function () {
+          const rows = table.querySelectorAll("tbody tr");
+          const start = currentPage * rowsPerPage;
+          if (start < rows.length) {
+            currentPage++;
+            showPage(currentPage);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+ -->
+
+
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Data Table</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .table-container {
+        margin: 0 50px;
+        padding: 0 10px;
+      }
+      .wrapper {
+        background-color: rgba(61, 162, 137, 0.71);
+      }
+      table {
+        border: 2px solid black !important;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.403);
+      }
+      th {
+        background-color: #374371 !important;
+        color: #fff !important;
+        text-align: center;
+      }
+      td {
+        text-align: center;
+      }
+      .hover-table tr:hover td{
+        background-color: rgb(24, 120, 194) !important;
+        color: white !important;
+      }
+      .pagination {
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .table-container h2 {
+        background: -webkit-linear-gradient(#a82f2f, #2b2020);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding-top: 40px;
+      }
+      @media (max-width: 1200px) {
+        .table-container {
+          margin: 0 10px;
+        }
+      }
+      @media (max-width: 1100px) {
+        .button {
+          display: grid;
+          justify-content: center;
+          align-items: center;
+        }
+        button.btn.btn-sm.btn-danger {
+          margin-top: 2px;
+        }
+      }
+      @media (max-width: 850px) {
+        .table-container {
+          min-width: 850px;
+        
+        }
+        .table-container h2{
+          padding-top: 44px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+    <div class="table-container">
+      <h2 id="tableTitle" class="text-center text-white">Form Data Table</h2>
+      <table id="dataTable" class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Sr No.</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Contact No.</th>
+            <th>Social Media</th>
+            <th>Content Types</th>
+            <th>Thumbnail Image</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody class="hover-table">
+          <tr>
+            <td>1</td>
+            <td>Ram</td>
+            <td>Sharma</td>
+            <td>ram@gmail.com</td>
+            <td>84659631587</td>
+            <td>@ramsharma</td>
+            <td>Education</td>
+            <td><img src="thumbnail1.jpg" alt="Thumbnail 1" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Shyam</td>
+            <td>Sharma</td>
+            <td>shyam@gmail.com</td>
+            <td>9876543210</td>
+            <td>@shyamsharma</td>
+            <td>Movie</td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail1.jpg" alt="Thumbnail 1" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail1.jpg" alt="Thumbnail 1" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail1.jpg" alt="Thumbnail 1" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail1.jpg" alt="Thumbnail 1" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="thumbnail2.jpg" alt="Thumbnail 2" /></td>
+            <td class="button">
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pagination">
+        <button id="prevBtn" class="btn btn-primary" style="display: none">
+          Previous
+        </button>
+        <button id="nextBtn" class="btn btn-primary">Next</button>
+      </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const table = document.getElementById("dataTable");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const tableTitle = document.getElementById("tableTitle");
+        const dataTable = document.getElementById("dataTable");
+        const rowsPerPage = 10;
+        let currentPage = 1;
+
+        function showPage(page) {
+          const rows = table.querySelectorAll("tbody tr");
+          const start = (page - 1) * rowsPerPage;
+          const end = start + rowsPerPage;
+
+          rows.forEach((row, index) => {
+            if (index >= start && index < end) {
+              row.style.display = "";
+            } else {
+              row.style.display = "none";
+            }
+          });
+
+          if (currentPage === 1) {
+            prevBtn.style.display = "none";
+          } else {
+            prevBtn.style.display = "inline-block";
+            prevBtn.style.margin = "10px";
+          }
+
+          if (end >= rows.length) {
+            nextBtn.style.display = "none";
+          } else {
+            nextBtn.style.display = "inline-block";
+            nextBtn.style.margin = "10px";
+          }
+          if (page > 1) {
+            tableTitle.style.display = "none";
+            dataTable.style.margin = "10px 0px 0px";
+          } else {
+            tableTitle.style.display = "block";
+          }
+        }
+
+        showPage(currentPage);
+
+        prevBtn.addEventListener("click", function () {
+          if (currentPage > 1) {
+            currentPage--;
+            showPage(currentPage);
+          }
+        });
+
+        nextBtn.addEventListener("click", function () {
+          const rows = table.querySelectorAll("tbody tr");
+          const start = currentPage * rowsPerPage;
+          if (start < rows.length) {
+            currentPage++;
+            showPage(currentPage);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
